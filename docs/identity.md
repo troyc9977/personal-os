@@ -41,7 +41,6 @@ These are what the 25-year project looks like in actual life over the next decad
 - **Filmmaking** — first short within 12 months of production company being set up. Four shorts in year one. Feature film year two. Studied Kubrick's preproduction methodology; using a 19-week system.
 - **Heritage restoration acquisition thesis** — by 2028-2029, acquire a small Toronto/Ontario heritage restoration business as cash-flow anchor and connection to physical-craft world. Cylinder for the beauty lane.
 - **Montreal move, 2027** — relocate after WardForge launch is stable. For Quebec market access (Phase 2 scaling), for personal life with partner, for a different relationship to Canadian intellectual culture than Toronto can give.
-- **Federal candidacy, ~2029** — tertiary, long-term. Not the primary track, but a real possibility once WardForge has matured and I have a public intellectual track record.
 
 ## What I am NOT optimizing for
 
