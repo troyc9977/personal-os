@@ -40,7 +40,7 @@ These are what the 25-year project looks like in actual life over the next decad
 - **Substack and writing practice** — public-facing intellectual track. Biweekly cadence starting fall 2026. *Comment Magazine* as first target publication. Building toward Canada's foremost voice on infrastructure delivery and political modernization.
 - **Filmmaking** — first short within 12 months of production company being set up. Four shorts in year one. Feature film year two. Studied Kubrick's preproduction methodology; using a 19-week system.
 - **Heritage restoration acquisition thesis** — by 2028-2029, acquire a small Toronto/Ontario heritage restoration business as cash-flow anchor and connection to physical-craft world. Cylinder for the beauty lane.
-- **Montreal move, 2027** — relocate after WardForge launch is stable. For Quebec market access (Phase 2 scaling), for personal life with partner, for a different relationship to Canadian intellectual culture than Toronto can give.
+- **Montreal move, 2027** — relocate after WardForge launch is stable. For Quebec market access (Phase 2 scaling), for a different relationship to Canadian intellectual culture than Toronto can give.
 
 ## What I am NOT optimizing for
 
@@ -62,9 +62,7 @@ Worth naming explicitly because they're easy to drift into.
 
 These are not decisions yet. Just open questions.
 
-- What does the partnership with my partner look like through the Montreal move and beyond? How do we hold long-distance, then re-collocation, then whatever comes after?
 - Where does my contemplative practice fit when WardForge is consuming most cycles? Acedia is the master temptation here.
-- Is the federal candidacy still real, or is it an artifact of an earlier self that I am keeping out of inertia?
-- How do I hold the tension between RidingPulse's pragmatic build and the larger civilizational frame without one corrupting the other?
+- How do I hold the tension between WardForge's pragmatic build and the larger civilizational frame without one corrupting the other?
 
 These get re-examined quarterly.
