@@ -1,0 +1,20 @@
+# Personal OS
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Anything I want excluded
+.private/
+
+# Node (if scripts get added later)
+node_modules/
+*.log
