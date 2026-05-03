@@ -6,7 +6,7 @@ The most important file in the repo. Everything else is in service of these.
 
 ## Who I am
 
-Troy Campbell. Toronto-based. Early thirties. A writer and filmmaker by formation, an operator and builder by current occupation. I think well. I read seriously. I am loyal. I take long views. I do not believe in shortcuts on questions of taste, character, or institution-building.
+Troy Campbell. Toronto-based. 27. A writer and filmmaker by formation, an operator and builder by current occupation. I think well. I read seriously. I am loyal. I take long views. I do not believe in shortcuts on questions of taste, character, or institution-building.
 
 ## Values
 
