@@ -35,7 +35,6 @@ The works I keep returning to or want to return to. Not a queue, more a permanen
 
 ### Literature
 - DeLillo, especially *White Noise*, *Underworld*, *Mao II*
-- Walker Percy
 - Cormac McCarthy
 
 ### Civic / institutional
