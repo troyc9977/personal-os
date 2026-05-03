@@ -1,6 +1,6 @@
 # Filmmaking
 
-**Status**: paused until WardForge Phase 1 ships (October 2026). Resumes Q1 2027.
+**Status**: paused until WardForge Phase 1 ships (October 2026). Resumes Q1 2028.
 
 Last updated: 2026-05-03
 
