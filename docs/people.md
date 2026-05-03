@@ -11,12 +11,12 @@ This is for me — to notice when I am drifting from someone I care about, to re
 ### My partner
 *(name, relationship status, current dynamic, what's happening for them right now, what I owe attention to, last meaningful conversation, next planned time together)*
 
-- Long-distance currently.
-- Montreal move in 2027 changes this.
-- *(fill in)*
+- No partner at the moment
 
 ### Family
-*(parents, siblings as appropriate)*
+Mom: Jennifer
+Dad: Scott
+Brother: Jack
 
 ## Co-builders
 
