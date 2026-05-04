@@ -7,38 +7,48 @@ The current week shape. Updated when it changes.
 ## Daily
 
 - **7:00 wake** (7:30 Fridays). Coffee first.
+- **~7:15 — 10-minute meditation.** Same chair, before any screens. The contemplative floor.
 - **Morning**: WardForge or DCC depending on day.
 - **Noon**: gym (Mon/Tue/Fri).
 - **Afternoon**: continued work.
 - **Evening**: reading, writing, films Fri/Sat.
 - **Sleep target**: 11pm-ish.
 
-Reading happens later in the day, not mornings. Mornings are for output.
+Reading happens later in the day, not mornings. Mornings are for output and the meditation that grounds the rest.
 
 ## Weekly shape
 
 | Day | Focus |
 |---|---|
-| Monday | DCC office. Read Sunday brain synthesis before work starts. |
+| Monday | DCC office. Read Sunday brain synthesis before work starts (when brain is live). |
 | Tuesday | DCC office. |
 | Wednesday | Site visits / running. |
 | Thursday | Full WardForge build day. |
 | Friday | DCC office. EOD: write Friday weekly state for WardForge. |
-| Saturday | Personal life, writing, partner, films. |
-| Sunday | Process inbox, read brain synthesis (when brain is live), one decision review, reading. |
+| Saturday | Personal life, writing, friends/family, films. |
+| Sunday | Process inbox, read brain synthesis, one decision review, reading. |
 
-## Weekly minimums
+## Weekly minimums (the actual floor)
 
-These are the floor, not the ceiling.
+These are honest current state, not aspiration. Aspiration goes in a separate section.
 
-- **Run**: 4x/week (Wed, Thu, Sat, Sun).
+- **Run**: 2-3x/week (Wed/Thu/Sat/Sun rotation).
 - **Gym**: 3x/week (Mon, Tue, Fri).
-- **Tweet**: 2x/day on writing days. ~10/week minimum.
-- **Reading**: 30+ pages/day, in-the-evening practice.
+- **Meditation**: 10 min daily morning. The new floor.
+- **Tweet**: 2x/day on writing days. Building toward 300 X followers as Substack precondition.
+- **Reading**: 30+ pages/day, evening practice.
 - **Films**: 2/week (Friday and Saturday evenings).
-- **Journal**: when I have something to say. Not a daily prescription.
-- **WardForge weekly state**: Friday EOD, judgment additions Saturday morning.
 - **Personal-OS inbox processing**: Sunday morning, ~15 min.
+
+## What I'm working back toward
+
+These are commitments I have stated but am not currently hitting. Named here so they're not invisible.
+
+- 4 runs/week (currently 2-3).
+- Stretching daily (currently negligible).
+- Better sleep quality (currently flagged as needing attention).
+
+When the foundation holds (meditation + 3 runs/week sustained for a month), I add stretching. Don't add everything at once.
 
 ## Quarterly review questions
 
@@ -46,6 +56,7 @@ These are the floor, not the ceiling.
 - What pulled me off pattern? Was it real (illness, project deadline) or drift (avoidance, distraction)?
 - What changed about my life this quarter that should be reflected in updated routines?
 - What is the routine missing that I keep meaning to add but haven't?
+- Is the 10-minute meditation still happening, or did it die quietly?
 
 ## Things I have considered but rejected
 

@@ -1,8 +1,8 @@
 # Contemplative Practice
 
-**Status**: ongoing. Watch for slippage during launch pressure.
+**Status**: currently slipped. Re-anchoring with a 10-minute morning meditation as the floor.
 
-Last updated: 2026-05-03
+Last reviewed: 2026-05-03
 
 ## What it is
 
@@ -16,19 +16,32 @@ Because acedia is the master temptation, and acedia is what kills serious people
 
 If the rest of the personal-OS is about doing, this file is about being.
 
-## Current practice
+## Honest current state
 
-- Reading: an Augustine-tradition or contemplative text alongside the main reading.
-- Prayer: the Jesus Prayer, irregularly, more during stressful periods.
-- Stillness: not enough. This is the area most vulnerable to drift.
+The last sustained period of real interior stillness was while meditating in Japan. There has been no formal practice this month. Contemplation is currently losing ground to ambition.
 
-## What I want to develop
+Reading is doing some of the interior work — Augustine's *Confessions* and the broader contemplative canon are alive in my evenings — but reading is not a substitute for sitting. Knowing this and doing nothing about it is its own form of dishonesty.
 
-Not "more practice" — better practice.
+## Why it slipped
 
-- **Sabbath-shaped Sundays.** The substrate Sunday review can coexist with a less-busy Sunday overall. Worth holding.
-- **Periodic silence.** A weekend retreat once a year, even informally.
-- **Reading the contemplative canon seriously.** Not as content, as formation.
+A few honest causes, named so they can be addressed:
+
+- WardForge intensity has consumed mornings, where the practice used to live.
+- No anchor habit. Without a fixed time and a fixed length, contemplation became "when I have time," which became never.
+- The relationship between contemplation and ambition flipped — instead of contemplation grounding the work, the work crowded out the contemplation.
+- The smaller daily practices (Jesus Prayer in passing, brief stillness) eroded along with the formal sit.
+
+## Re-anchoring plan
+
+The smallest sustainable practice. Designed to be small enough that it actually happens, with room to grow once the floor holds.
+
+- **10 minutes morning meditation, before opening the laptop.**
+- Form: silent sit, simple anchor (breath or the Jesus Prayer). Not guided, not app-based.
+- Place: same chair every morning. Same seat = the practice happens.
+- Time: immediately after coffee, before any work or screens.
+- No streak counting. No quantified-self overlay. The practice is its own measure.
+
+If after two weeks the 10 minutes is holding, extend by 5 minutes. If the practice is dying, the answer is not "more discipline" — it is to reduce further (5 min) or change the form (sit later in the day, walking practice, etc.). The floor matters more than the height.
 
 ## Watch-for signals of drift
 
@@ -38,10 +51,21 @@ These are the symptoms that tell me I am slipping into purely-instrumental mode:
 - Phone-checking patterns becoming compulsive.
 - The contemplative books staying on the shelf for weeks.
 - Films watched for "research" rather than for their own sake.
-- Conversations with my partner becoming logistical instead of relational.
+- Conversations with friends and family becoming logistical instead of relational.
 - A sense that I am performing my life rather than living it.
 
 When I see these signals, the response is not "more discipline" — it is *less*. Step back, read Augustine, sit with what is actually happening.
+
+## What I want to develop, eventually
+
+Not "more practice" — better practice.
+
+- **Sabbath-shaped Sundays.** The substrate Sunday review can coexist with a less-busy Sunday overall.
+- **Periodic silence.** A weekend retreat once a year, even informally.
+- **Reading the contemplative canon seriously.** Not as content, as formation.
+- **The Jesus Prayer as a continuous undercurrent**, not just a formal sit.
+
+These come after the 10-minute floor holds for at least a month.
 
 ## What this is NOT
 
