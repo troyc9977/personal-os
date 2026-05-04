@@ -16,7 +16,7 @@ In rough priority order — the higher-up wins when they conflict.
 2. **Quality over scale.** A small number of excellent things beats a large number of mediocre things. Always.
 3. **Long-term over short-term.** Default to the 25-year frame. Most decisions made on a 6-month frame will look stupid later.
 4. **Discipline as foundation, not performance.** Daily habits exist to make creative and intellectual work possible, not to be displayed.
-5. **Loyalty to the small number of people who matter.** My partner. Matthew. Family. A tight handful of friends. Loyalty is operational, not sentimental.
+5. **Loyalty to the small number of people who matter.** Family. Matthew. A tight handful of friends. Loyalty is operational, not sentimental.
 6. **Beauty is not optional.** In architecture, in writing, in software, in the way I live. The world has too little of it; I will not contribute to that.
 7. **Local over global.** Toronto, then Canada, then the West. Concentric loyalties.
 8. **Contemplation over consumption.** Read fewer better books. Watch fewer better films. Sit with hard questions longer.
@@ -38,9 +38,13 @@ These are what the 25-year project looks like in actual life over the next decad
 
 - **WardForge** — technology cylinder of the project. Phase 1 launches October 26, 2026. Phase 2 expands to provincial, federal, and the permissioned political intelligence network. This is the primary work-life vehicle through 2029.
 - **Substack and writing practice** — public-facing intellectual track. Biweekly cadence starting fall 2026. *Comment Magazine* as first target publication. Building toward Canada's foremost voice on infrastructure delivery and political modernization.
-- **Filmmaking** — first short within 12 months of production company being set up. Four shorts in year one. Feature film year two. Studied Kubrick's preproduction methodology; using a 19-week system.
+- **Filmmaking** — cultural output cylinder. Currently paused until post-October 2026 launch. Operational plan in projects/filmmaking.md.
 - **Heritage restoration acquisition thesis** — by 2028-2029, acquire a small Toronto/Ontario heritage restoration business as cash-flow anchor and connection to physical-craft world. Cylinder for the beauty lane.
-- **Montreal move, 2027** — relocate after WardForge launch is stable. For Quebec market access (Phase 2 scaling), for a different relationship to Canadian intellectual culture than Toronto can give.
+- **Montreal move** — deferred. The previous 2027 timeline is no longer active. Will revisit when WardForge phase 1 is shipped.
+
+## Current honest assessment
+
+The cultural-output cylinder of the 25-year project (filmmaking, writing) is largely dormant for the next ~18 months while WardForge consumes available bandwidth — this is deliberate, not drift.
 
 ## What I am NOT optimizing for
 

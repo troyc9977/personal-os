@@ -4,6 +4,8 @@
 
 Accepted — 2026-05-03
 
+> **Amended 2026-05-03**: The daily-entry format and interaction workflow were updated by ADR-0006 (Compass dashboard). The substrate structure described here remains canonical, but: task IDs ([tN]) were added; retrospective is now optional rather than required; primary interaction shifted from manual markdown editing to dashboard. See ADR-0006 for current shape.
+
 ## Context
 
 The personal-OS substrate covers identity, projects, decisions, and people, but until now had no operational layer for what I'm doing today, what I'm trying to move this week, what habits I'm holding, and what I'm tracking over months and quarters. Calendar blocking has not worked for me — I don't follow it. I need a different shape.

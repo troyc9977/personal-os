@@ -4,6 +4,8 @@
 
 Accepted — 2026-05-03
 
+Updates ADR-0005's daily-entry format and interaction workflow.
+
 ## Context
 
 ADR-0005 set up the daily/weekly/habit/goals tracking system as substrate. The substrate is markdown in `docs/daily/`, `docs/weekly/`, `docs/reading-log/`, and `docs/goals/`. The intended workflow had me writing daily entries in markdown each morning and evening.
@@ -111,7 +113,7 @@ Not built in v1, but the architecture supports them for v2:
 ### Positive
 - Daily interaction friction drops from "open markdown editor and write" to "tap checkbox on phone."
 - Substrate stays canonical and human-readable. Brain (when deployed) can read the same files Compass reads/writes.
-- Mobile use becomes possible, which unlocks logging-in-the-moment habits (tick after run, ick after meditation, add small tasks during the day).
+- Mobile use becomes possible, which unlocks logging-in-the-moment habits (tick after run, tick after meditation, add small tasks during the day).
 - Kanban + flow pattern matches how I actually think about tasks (some are committed for today, some are in a weekly pool waiting to be pulled).
 - Retrospective stays optional, so the daily entry isn't a forced journaling exercise.
 - Same hosting pattern as brain means the deploy/auth/PAT infrastructure I just built gets reused.

@@ -35,3 +35,8 @@ After processing, the file is empty below the rules section. Date headers stay a
 ## YYYY-MM-DD
 
 -
+
+## 2026-05-03
+
+- people.md is still mostly template — needs first pass during a quiet weekly review (rough is fine; refinement comes later)
+- Cultural output cylinder going thin for ~18 months — already noted in identity.md; consider a goals/2026.md note if it persists

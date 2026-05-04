@@ -25,15 +25,21 @@ docs/
 ├── inbox.md                 # capture-first dump, processed weekly
 ├── projects/                # one file per active project
 ├── decisions/               # ADRs for personal decisions
-├── states/                  # weekly states (auto-generated + judgment)
+├── goals/                   # year and quarter goals
+├── daily/                   # daily entries (one file per month)
+├── weekly/                  # weekly OKR + retrospective
+├── reading-log/             # daily reading log with page numbers
 └── notes/                   # free-form dated thinking
 ```
 
 ## How it works
 
-**Daily:** capture into `docs/inbox.md`. No filtering, no formatting, just dump.
+**Daily:**
+- Open today's entry in `docs/daily/YYYY-MM.md` (Compass dashboard surfaces this) — intention, tasks, habits, optional retrospective.
+- Capture loose items into `docs/inbox.md`. No filtering, no formatting, just dump.
 
-**Weekly (Sunday morning, ~15 min):**
+**Weekly (Sunday morning, ~20-30 min):**
+- Sunday review in `docs/weekly/YYYY-MM.md`: hit/partial/miss for the week's three, habit summary, draft next week's three.
 - Process inbox: trash / do now / file to project / promote to decision.
 - Read the synthesis if the brain is generating one.
 - Update project files with what moved this week.
@@ -46,6 +52,10 @@ docs/
 - Substantial review of identity, routines, and project list.
 - Archive completed or abandoned projects.
 - Refresh the long-arc commitments if they've shifted.
+- Quarter review + draft next quarter in `docs/goals/YYYY-Qn.md`.
+
+**Annually (a few hours):**
+- Year review + set three big bets for next year in `docs/goals/YYYY.md`.
 
 ## Discipline
 
