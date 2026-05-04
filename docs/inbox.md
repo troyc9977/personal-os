@@ -32,6 +32,10 @@ After processing, the file is empty below the rules section. Date headers stay a
 
 ---
 
+## 2026-05-04
+
+- first capture
+
 ## YYYY-MM-DD
 
 -
