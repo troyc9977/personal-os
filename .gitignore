@@ -18,3 +18,5 @@ desktop.ini
 # Node (if scripts get added later)
 node_modules/
 *.log
+
+.claude/
