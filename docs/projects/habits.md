@@ -7,9 +7,10 @@ Last reviewed: 2026-05-03
 ## What's tracked
 
 - **Meditation** — daily, 10 min minimum. Per ADR-0003.
-- **Run** — 4x/week target. Building back from current 2-3x.
-- **Stretching** — 3x/week target. Building from negligible.
-- **No bad habit** — daily. Kept general intentionally; the specific shape stays private to me.
+- **Run** — 4-5x/week target during marathon training; 2-3x/week base otherwise.
+- **Gym** — 3x/week, Mon/Tue/Fri. Strength + ACL-aware programming. Per ADR-0010.
+- **Stretching** — 3x/week target.
+- **No bad habit** — daily. Cigarettes-per-day at-or-below today's allotment per `goals/long-term/stop-smoking-2026.md`.
 
 ## Why these four
 
