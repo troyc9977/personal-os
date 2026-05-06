@@ -32,6 +32,10 @@ After processing, the file is empty below the rules section. Date headers stay a
 
 ---
 
+## 2026-05-06
+
+- Civic tech to make Canadian give more efficient. Start with procurement and epas.
+
 ## 2026-05-04
 
 - testing
