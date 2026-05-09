@@ -32,6 +32,10 @@ After processing, the file is empty below the rules section. Date headers stay a
 
 ---
 
+## 2026-05-09
+
+- Moulin Rouge type short film with snippets from a guys life but it’s always exciting
+
 ## 2026-05-06
 
 - Civic tech to make Canadian give more efficient. Start with procurement and epas.
