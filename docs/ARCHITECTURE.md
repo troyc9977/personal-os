@@ -92,22 +92,21 @@ structure within those headings.
 ### Goals — long-term (`docs/goals/long-term/<slug>.md`) — *partially populated*
 
 YAML-frontmatter goal files with milestones, schedules, and sessions_log.
-Schema in `docs/schemas/goal-frontmatter.md`. ADRs 0007, 0009, and 0010
-reference goal files at:
+Schema in `docs/schemas/goal-frontmatter.md`. Several goal files exist or
+are in progress:
 
 - `docs/goals/long-term/cnc-shop-acquisition.md`
-- `docs/goals/long-term/substack-2026.md`
+- `docs/goals/long-term/substack-2026.md` — partially backed by ADR-0004; a dedicated ADR is still to be authored
 - `docs/goals/long-term/toronto-half-2026.md`
-- `docs/goals/long-term/stop-smoking-2026.md`
+- `docs/goals/long-term/stop-smoking-2026.md` — backing ADR still to be authored
 
-These have been drafted in conversation but not yet committed. The architect
-authors against the schema; the scribe updates existing files.
+The architect authors against the schema; the scribe updates existing files.
 
 ### Architecture Decision Records (`docs/decisions/`)
 
 One markdown file per decision, numbered sequentially (`0001-personal-os-exists.md`
-through `0010-add-gym-to-habits.md`). Captures *why* a choice was made, not just
-*what* the choice was. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
+onward). Captures *why* a choice was made, not just *what* the choice was.
+Currently 0001–0006 committed. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
 
 The architect drafts ADRs. The librarian maintains the index after merges.
 
