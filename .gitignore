@@ -19,4 +19,9 @@ desktop.ini
 node_modules/
 *.log
 
-.claude/
+# Claude Code: track project config (agents, hooks, settings.json) but NOT
+# local/per-machine settings or cache.
+.claude/settings.local.json
+.claude/cache/
+.claude/state/
+.claude/.session

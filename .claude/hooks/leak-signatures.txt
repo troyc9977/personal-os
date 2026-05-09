@@ -1,0 +1,50 @@
+# Leak signatures for personal-os.
+#
+# Phrases or filenames that, if they appear in a Write/Edit to a non-PRIVATE
+# file, suggest content has leaked from the two PRIVATE strategy docs.
+#
+# One signature per line. Lines starting with # are comments.
+# Matching is case-insensitive substring match.
+#
+# When you find a real signature is too noisy or too narrow, edit this file.
+# When you decide a new phrase is worth tracking, add it here.
+
+# File markers
+NOT FOR WARDFORGE REPO
+PRIVATE — Comprehensive long-term plan
+PRIVATE — Personal long-term plan
+personal-long-term-plan-PRIVATE
+comprehensive-long-term-plan
+
+# Phase labels from the long-term plan
+Phase 1: Foundation (2026)
+Phase 2: Validation and Expansion
+Phase 3: Active Building
+Phase 4: Mature Operation
+Phase A: Building (2026-2028)
+Phase B: Established (2028-2030)
+Phase C: Influence (2030-2035)
+
+# Strategic-track terminology from the PRIVATE docs
+Connective tissue
+Creator network
+behind-the-scenes only for partisan work
+behind-the-scenes work eventually becomes public
+WardForge stays nonpartisan publicly
+Personal politics separate from business
+Resources before influence
+
+# Distinctive partisan-strategic phrases
+aligned creators
+aligned organizations
+aligned ecosystem
+conservative-aligned creators
+conservative-aligned infrastructure
+political infrastructure work
+youth conservative trend
+
+# Founder-vulnerability language from the personal plan
+Distraction risk
+Conflict aversion in customer outreach
+Identity attachment to product
+Partisan temptation as the company succeeds
