@@ -28,7 +28,7 @@ Top level:
 - `calendar/YYYY-MM.md` — events/appointments. *Planned (Compass v2). Not yet present.*
 - `goals/YYYY.md`, `goals/YYYY-Qn.md` — annual and quarterly markdown goal docs.
 - `goals/long-term/<slug>.md` — YAML-frontmatter goal files with milestones, schedules, sessions_log. Schema in `docs/schemas/goal-frontmatter.md`. *Some files referenced by ADRs but not yet authored — flagged in librarian audits.*
-- `decisions/NNNN-*.md` — Architecture Decision Records, numbered 0001+. Index in `decisions/README.md`. Template in `decisions/template.md`. Currently 0001–0010.
+- `decisions/NNNN-*.md` — Architecture Decision Records, numbered 0001+. Index in `decisions/README.md`. Template in `decisions/template.md`. Currently 0001–0006 committed; several pending.
 - `projects/*.md` — one file per active life-project (`28th-floor.md`, `dcc.md`, `substack.md`, `wardforge.md`, etc.).
 - `notes/YYYY-MM-DD-name.md` — freeform dated thinking, promoted from inbox when ideas mature.
 - `schemas/*.md` — schemas for structured files (currently `goal-frontmatter.md`).
@@ -90,7 +90,7 @@ This repo runs three sub-agents, scoped to high-leverage workflows:
 
 - **architect** — Decomposes fuzzy thinking into structured artifacts. Drafts ADRs from "I just decided X." Authors goal-file YAML frontmatter + narrative against the schema in `docs/schemas/goal-frontmatter.md`. Identifies the right container for any input (ADR vs goal vs project update vs inbox vs note). Reads `identity.md`, ADR-0002, the PRIVATE files for context. Writes only structured artifacts.
 - **scribe** — Writes content in house voice against architect specs. Updates project files. Drafts weekly review composition by reading `daily/`, `weekly/`, `reading-log/`. Promotes mature inbox bullets to `notes/`. Doesn't make architectural decisions.
-- **librarian** — Read-mostly. Cross-reference integrity (the missing `goals/long-term/*.md` files referenced by ADRs 0007/0009/0010 are real drift). Monthly decision audit ("which ADRs from past 30 days are still holding?"). Quarterly project audit. Updates `README.md`, `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/decisions/README.md` after merges. Validates Compass parser-format compliance when daily/weekly/inbox are hand-edited.
+- **librarian** — Read-mostly. Cross-reference integrity (ADRs backing `stop-smoking-2026.md` and `substack-2026.md` long-term goal files are still to be authored; `substack-2026.md` has partial backing via ADR-0004). Monthly decision audit ("which ADRs from past 30 days are still holding?"). Quarterly project audit. Updates `README.md`, `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/decisions/README.md` after merges. Validates Compass parser-format compliance when daily/weekly/inbox are hand-edited.
 
 **Default sequence for non-trivial work:**
 `architect → scribe → (Troy reviews) → librarian audits cross-references`
