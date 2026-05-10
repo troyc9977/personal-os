@@ -99,6 +99,7 @@ Schema in `docs/schemas/goal-frontmatter.md`. Current files:
 - `docs/goals/long-term/substack-2026.md` — backed by ADR-0009 (launch timing); ADR-0004 preconditions framework still applies
 - `docs/goals/long-term/toronto-half-2026.md` — backed by ADR-0011 (Phase 1 amendment)
 - `docs/goals/long-term/stop-smoking-2026.md` — no dedicated ADR yet (flagged)
+- `docs/goals/long-term/reading-2026.md` — backed by ADR-0013 (session_log input type, soft-floor framing)
 
 Note: `cnc-shop-acquisition.md` was moved to `docs/notes/2026-05-09-cnc-shop-acquisition.md`
 (goal deferred; ADR-0007 still references the old goal path — flagged for architect).
@@ -109,7 +110,7 @@ The architect authors against the schema; the scribe updates existing files.
 
 One markdown file per decision, numbered sequentially (`0001-personal-os-exists.md`
 onward). Captures *why* a choice was made, not just *what* the choice was.
-Currently 0001–0012. Next available: 0013. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
+Currently 0001–0013. Next available: 0014. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
 
 The architect drafts ADRs. The librarian maintains the index after merges.
 

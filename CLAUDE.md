@@ -28,7 +28,7 @@ Top level:
 - `calendar/YYYY-MM.md` — events/appointments. *Planned (Compass v2). Not yet present.*
 - `goals/YYYY.md`, `goals/YYYY-Qn.md` — annual and quarterly markdown goal docs.
 - `goals/long-term/<slug>.md` — YAML-frontmatter goal files with milestones, schedules, sessions_log. Schema in `docs/schemas/goal-frontmatter.md`. *Some files referenced by ADRs but not yet authored — flagged in librarian audits.*
-- `decisions/NNNN-*.md` — Architecture Decision Records, numbered 0001+. Index in `decisions/README.md`. Template in `decisions/template.md`. Currently 0001–0012. Next available: 0013.
+- `decisions/NNNN-*.md` — Architecture Decision Records, numbered 0001+. Index in `decisions/README.md`. Template in `decisions/template.md`. Currently 0001–0013. Next available: 0014.
 - `projects/*.md` — one file per active life-project (`28th-floor.md`, `dcc.md`, `substack.md`, `wardforge.md`, etc.).
 - `notes/YYYY-MM-DD-name.md` — freeform dated thinking, promoted from inbox when ideas mature.
 - `schemas/*.md` — schemas for structured files (currently `goal-frontmatter.md`).

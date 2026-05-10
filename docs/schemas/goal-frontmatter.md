@@ -224,27 +224,6 @@ triggers:
   - { description: string, note: string|null }
 ```
 
-### `behavioral`: tap-counter daily tracking
-
-For goals where Compass has a tap-increment widget (currently smoking).
-
-```yaml
-daily_tracking:
-  metric:  string             # e.g. "cigarettes"
-  unit:    string             # e.g. "count"
-  input:   string             # v1: only "tap_increment" is supported
-  log:     []                 # appended daily by Compass: { date, count, target, times: [HH:MM, ...] }
-```
-
-`input: tap_increment` is the only supported value in v1. The Compass worker
-currently absorbs minor shape variation in `daily_tracking` via a multi-shape
-resolver in `getCurrentCap()`; declaring this canonical shape lets that
-resolver simplify on the worker's next deploy.
-
-When `daily_tracking` is present, the per-day count log accumulates in
-`daily_tracking.log`, not in `sessions_log`. `sessions_log: []` stays present
-on the file as a universal field.
-
 ### `creative`: phases as the decomposition
 
 `creative` goals with a temporal arc use the universal `phases[]` block.
@@ -309,6 +288,92 @@ conditional on a clinical or readiness check — e.g. post-injury return.
 Future league goals (joining a new league without an injury context) omit
 `readiness_gate`.
 
+### `daily_tracking`
+
+Per-day measurement against a metric. **Type-agnostic** — any goal type
+may use `daily_tracking` when per-day measurement is the appropriate
+shape. Live uses: `stop-smoking-2026.md` (`behavioral`, hard ceiling)
+and `reading-2026.md` (`intellectual`, soft floor). ADR-0013 introduced
+the `session_log` input type.
+
+```yaml
+daily_tracking:
+  metric:        string         # e.g. "cigarettes", "pages"
+  unit:          string         # e.g. "count"
+  input:         string         # see "input values" below
+  daily_target:  int|null       # optional; soft target. Omit when target is dynamic.
+  log:           []             # appended by Compass; shape depends on `input`
+```
+
+#### `input` values
+
+`input` selects the Compass widget and the per-entry shape that gets
+appended to `log[]`. Adding a new `input` value requires an ADR (the
+widget is a Compass-repo change as well).
+
+- **`tap_increment`** — single counter, ticked up through the day by a
+  tap widget. One entry per day. Live use: `stop-smoking-2026.md`.
+  Per-day log entry shape: `{ date, count, target, times: [HH:MM, ...] }`.
+
+- **`session_log`** — per-session structured entries with a label.
+  Multiple entries per day are summed for the day's total. Introduced
+  in ADR-0013. Live use: `reading-2026.md`. Per-entry shape:
+  `{ date, book, pages }`. Book is a free-form string, typically drawn
+  from the goal's `currently_reading` list. No timestamp.
+
+  v1 is hard-wired to the reading shape (`book`, `pages`). Future
+  `session_log` consumers with different label/count field names need
+  either a small schema extension or a new `input` value via ADR.
+
+#### `daily_target`
+
+Optional. Integer or null. **Soft target — used for display and
+aggregation, not enforcement.** Compass shows the day's running total
+against `daily_target` if set; nothing blocks or shames a miss.
+
+Include `daily_target` when the target is static (e.g. reading's 35
+pages/day floor). Omit when the target is dynamic and derives from
+another block — e.g. the smoking goal's daily target is read out of
+`taper.weeks[i].target_per_day` for whichever week today falls into, so
+`daily_tracking.daily_target` is omitted on that file.
+
+#### Log location
+
+When `daily_tracking` is present, the per-day or per-session log
+accumulates in `daily_tracking.log`, not in `sessions_log`.
+`sessions_log: []` stays present on the file as a universal field.
+
+The Compass worker historically absorbed minor shape variation in
+`daily_tracking` via a multi-shape resolver in `getCurrentCap()`;
+declaring this canonical shape lets that resolver simplify on the
+worker's next deploy.
+
+### Reading-style list blocks
+
+Three `list[string]` blocks for active/queued/completed items.
+Introduced by ADR-0013 for `reading-2026.md`; the schema is
+type-agnostic so future goals where the same active/queue/done shape
+fits (e.g. a film curriculum, a paper queue) can reuse it.
+
+```yaml
+currently_reading:  list[string]    # active items, free-form strings
+to_read:            list[string]    # queued items
+finished:           list[string]    # completed items
+```
+
+Entries are **free-form strings**, not structured records. The typical
+shape for books is `"Author — Title"` (em-dash separator), optionally
+qualified with edition/translator in parentheses (e.g.
+`"Epictetus — Discourses (Penguin Classics)"`). This is intentional:
+the tracker is for practice, not bibliography. If structured book
+records become valuable later (ISBN, edition metadata, dates), that's
+a schema-evolution step worth its own ADR.
+
+All three blocks are individually optional. A future goal might use
+`currently_reading` and `finished` without a `to_read` queue, or vice
+versa. Authors omit blocks that carry no meaning rather than padding
+with `[]`.
+
 ---
 
 ## Body conventions
@@ -349,7 +414,6 @@ frontmatter is for Compass.
 ```yaml
 ---
 id: toronto-half-2026
-slug: toronto-half-2026
 title: Toronto Waterfront Half Marathon (with full-marathon stretch)
 type: physical
 status: active
@@ -398,12 +462,11 @@ sessions_log: []
 ---
 ```
 
-### Behavioral (smoking taper — `daily_tracking` plus universal `sessions_log: []`)
+### Behavioral (smoking taper)
 
 ```yaml
 ---
 id: stop-smoking-2026
-slug: stop-smoking-2026
 title: Stop smoking — six-week taper, then maintenance
 type: behavioral
 status: active
@@ -459,7 +522,6 @@ sessions_log: []
 ```yaml
 ---
 id: screenplay-may-21
-slug: screenplay-may-21
 title: Short film script — outline to polish in 13 days
 type: creative
 status: active
@@ -492,12 +554,56 @@ sessions_log: []
 ---
 ```
 
+### Intellectual (reading practice — `daily_tracking` with `session_log`, reading-style list blocks)
+
+Brief illustration. The full live file is `reading-2026.md`; this snippet
+shows only the shape introduced by ADR-0013. Soft-floor framing (no
+ceiling, no milestones, `daily_target` for display only).
+
+```yaml
+---
+id: reading-2026
+title: Daily reading practice — 2026
+type: intellectual
+status: active
+priority: 3
+created_at: 2026-05-10
+target_date: null
+tags: [reading, curriculum]
+references:
+  - docs/decisions/0002-priority-ordering.md
+  - docs/decisions/0013-reading-tracker-architecture.md
+  - docs/reading.md
+  - docs/reading-log/
+
+daily_tracking:
+  metric: pages
+  unit: count
+  input: session_log
+  daily_target: 35
+  log: []
+
+currently_reading:
+  - "Robert Caro — The Power Broker"
+  - "E. B. White — Here Is New York"
+
+to_read:
+  - "Plutarch — Greek Lives"
+
+finished:
+  - "C. S. Lewis — Mere Christianity"
+
+milestones: []
+
+sessions_log: []
+---
+```
+
 ### Purchase (schematic — no live file yet)
 
 ```yaml
 ---
 id: buy-suit
-slug: buy-suit
 title: Saville-Row-grade suit
 type: purchase
 status: active
@@ -525,7 +631,6 @@ sessions_log: []
 ```yaml
 ---
 id: cnc-shop-acquisition
-slug: cnc-shop-acquisition
 title: CNC shop acquisition (long-horizon thesis)
 type: acquisition
 status: paused
