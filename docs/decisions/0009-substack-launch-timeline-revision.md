@@ -58,5 +58,5 @@ Revisited at:
 ## Related
 
 - `docs/decisions/0004-substack-launch-preconditions.md` (superseded portion)
-- `goals/long-term/substack-2026.md` (to be authored, reflects this ADR)
+- `goals/long-term/substack-2026.md`
 - `projects/substack.md`

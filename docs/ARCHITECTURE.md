@@ -89,16 +89,19 @@ Markdown goal docs maintained by hand. Three big bets per year, three top
 items per quarter, plus what Troy is *not* doing this year/quarter. Free-form
 structure within those headings.
 
-### Goals — long-term (`docs/goals/long-term/<slug>.md`) — *partially populated*
+### Goals — long-term (`docs/goals/long-term/<slug>.md`)
 
 YAML-frontmatter goal files with milestones, schedules, and sessions_log.
-Schema in `docs/schemas/goal-frontmatter.md`. Several goal files exist or
-are in progress:
+Schema in `docs/schemas/goal-frontmatter.md`. Current files:
 
-- `docs/goals/long-term/cnc-shop-acquisition.md`
-- `docs/goals/long-term/substack-2026.md` — partially backed by ADR-0004; a dedicated ADR is still to be authored
-- `docs/goals/long-term/toronto-half-2026.md`
-- `docs/goals/long-term/stop-smoking-2026.md` — backing ADR still to be authored
+- `docs/goals/long-term/acl-return-to-sport.md` — backed by ADR-0011
+- `docs/goals/long-term/screenplay-may-21.md`
+- `docs/goals/long-term/substack-2026.md` — backed by ADR-0009 (launch timing); ADR-0004 preconditions framework still applies
+- `docs/goals/long-term/toronto-half-2026.md` — backed by ADR-0011 (Phase 1 amendment)
+- `docs/goals/long-term/stop-smoking-2026.md` — no dedicated ADR yet (flagged)
+
+Note: `cnc-shop-acquisition.md` was moved to `docs/notes/2026-05-09-cnc-shop-acquisition.md`
+(goal deferred; ADR-0007 still references the old goal path — flagged for architect).
 
 The architect authors against the schema; the scribe updates existing files.
 
@@ -106,7 +109,7 @@ The architect authors against the schema; the scribe updates existing files.
 
 One markdown file per decision, numbered sequentially (`0001-personal-os-exists.md`
 onward). Captures *why* a choice was made, not just *what* the choice was.
-Currently 0001–0006 committed. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
+Currently 0001–0011. Next available: 0012. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
 
 The architect drafts ADRs. The librarian maintains the index after merges.
 

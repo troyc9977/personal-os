@@ -46,3 +46,7 @@ These are not the same goal. Different industries, different operator profiles, 
 - `projects/heritage-restoration.md`
 - `goals/long-term/cnc-shop-acquisition.md` (to be authored)
 - `docs/identity.md` (the beauty lane of the 25-year project)
+
+## Superseded by
+
+2026-05-09 — CNC sub-decision moved to aspiration status. The goal file referenced above was not authored; the CNC thesis now lives as a placeholder at `docs/notes/2026-05-09-cnc-shop-acquisition.md` (no current commitment, no active research, revisit if/when WardForge has stable revenue). The heritage restoration portion of this ADR remains active.
