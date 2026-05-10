@@ -24,7 +24,7 @@ stretch:
     - <=1 missed training week across base + aerobic blocks
 
 milestones:
-  - { title: "Register for Toronto Waterfront Half", target: 2026-05-10, done: false }
+  - { title: "Register for Toronto Waterfront Half", target: 2026-05-10, done: true }
   - { title: "Base build complete (25 km/wk, long run 10 km)", target: 2026-06-14, done: false }
   - { title: "Aerobic block complete (35 km/wk, long run 16 km)", target: 2026-07-26, done: false }
   - { title: "August half (decision point on full upgrade)", target: 2026-08-16, done: false }
