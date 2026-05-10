@@ -3,8 +3,9 @@ id: stop-smoking-2026
 title: Stop smoking — six-week taper, then maintenance
 type: behavioral
 status: active
-target_date: 2026-06-15
 priority: 4
+created_at: 2026-05-09
+target_date: 2026-06-15
 references:
   - docs/decisions/0002-priority-ordering.md
   - docs/projects/habits.md
@@ -48,6 +49,8 @@ milestones:
   - { title: "30 days at maintenance",                       target: 2026-07-16, done: false }
   - { title: "90 days at maintenance",                       target: 2026-09-15, done: false }
   - { title: "365 days at maintenance",                      target: 2027-06-15, done: false }
+
+sessions_log: []
 ---
 
 # Stop smoking — six-week taper, then maintenance

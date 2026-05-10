@@ -3,8 +3,9 @@ id: toronto-half-2026
 title: Toronto Waterfront Half Marathon (with full-marathon stretch)
 type: physical
 status: active
-target_date: 2026-10-18
 priority: 4
+created_at: 2026-05-09
+target_date: 2026-10-18
 references:
   - docs/decisions/0002-priority-ordering.md
   - docs/decisions/0011-acl-block-priority-over-marathon-phase-1.md

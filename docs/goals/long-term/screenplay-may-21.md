@@ -3,8 +3,9 @@ id: screenplay-may-21
 title: Short film script — outline to polish in 13 days
 type: creative
 status: active
-target_date: 2026-05-21
 priority: 6
+created_at: 2026-05-10
+target_date: 2026-05-21
 references:
   - docs/decisions/0002-priority-ordering.md
   - docs/identity.md
@@ -17,10 +18,10 @@ milestones:
   - { title: "Polish complete — script done",            target: 2026-05-21, done: false }
 
 phases:
-  - { name: "Outline", weeks: "1",   dates: "May 9 - May 10",  target: "Beat sheet — full sequence of beats, no prose yet",     long_run: null }
-  - { name: "Draft",   weeks: "2",   dates: "May 11 - May 17", target: "First draft to FADE OUT. Get there ugly if needed.",    long_run: null }
-  - { name: "Revise",  weeks: "3",   dates: "May 18 - May 20", target: "Structural and dialogue passes. Cut, sharpen, condense.", long_run: null }
-  - { name: "Polish",  weeks: "3",   dates: "May 21",          target: "Final read; format clean; done.",                       long_run: null }
+  - { name: "Outline", weeks: "1",                dates: "May 9 - May 10",  target: "Beat sheet — full sequence of beats, no prose yet" }
+  - { name: "Draft",   weeks: "2",                dates: "May 11 - May 17", target: "First draft to FADE OUT. Get there ugly if needed." }
+  - { name: "Revise",  weeks: "3",                dates: "May 18 - May 20", target: "Structural and dialogue passes. Cut, sharpen, condense." }
+  - { name: "Polish",  weeks: "3 — May 21 only",  dates: "May 21",          target: "Final read; format clean; done." }
 
 schedule:
   - { day: mon, title: "Screenplay session (~1.5 hr, evening)" }

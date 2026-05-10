@@ -15,7 +15,7 @@ will understand immediately.
 
 For decisions worth preserving. Follow `docs/decisions/template.md`. Number
 sequentially — check `docs/decisions/README.md` for the next available number
-(currently the next is **0011**).
+(currently the next is **0013**).
 
 A decision is ADR-worthy if Troy might want to remember it in 6 months. Examples:
 
@@ -80,6 +80,21 @@ project file. Don't quote partisan rationale in an ADR's "context" section
 beyond what's already public-facing in identity.md or other ADRs. The
 `leak-check.js` hook will catch this — if it fires, treat that as a real
 signal that you've leaked, and rewrite.
+
+## Goal-file schema discipline
+
+When authoring or modifying any file in `docs/goals/long-term/`, treat
+`docs/schemas/goal-frontmatter.md` as the **strict spec** (canonicalized in
+ADR-0012):
+
+- Use canonical names. No variants — `target` not `date`, `done` not `status`.
+- Required universal fields are present on every file, even when empty
+  (`sessions_log: []`, `references: []`). `tags` and `review_date` are
+  optional-universal — include when meaningful, omit otherwise.
+- `phases[].long_run` is omittable entirely. Don't pad non-running goals
+  with `long_run: null`.
+- Introducing a new type-specific field requires updating the schema doc
+  in the same change. Don't invent fields ad-hoc on a goal file.
 
 ## Constraints
 

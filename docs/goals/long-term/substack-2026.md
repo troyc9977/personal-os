@@ -3,8 +3,9 @@ id: substack-2026
 title: First external publication, Substack opens around it
 type: creative
 status: active
-target_date: 2026-11-30
 priority: 6
+created_at: 2026-05-09
+target_date: 2026-11-30
 references:
   - docs/decisions/0002-priority-ordering.md
   - docs/decisions/0004-substack-launch-preconditions.md

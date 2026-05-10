@@ -3,8 +3,9 @@ id: acl-return-to-sport
 title: ACL return-to-sport — squash readiness in 6 weeks
 type: physical
 status: active
-target_date: 2026-06-20
 priority: 8
+created_at: 2026-05-10
+target_date: 2026-06-20
 references:
   - docs/decisions/0011-acl-block-priority-over-marathon-phase-1.md
   - docs/decisions/0002-priority-ordering.md
@@ -22,9 +23,9 @@ milestones:
   - { title: "Return-to-play assessment",                                                   target: 2026-06-20, done: false }
 
 phases:
-  - { name: "Foundation", weeks: "1-2", dates: "May 9 - May 23",  target: "Lower-amplitude plyos, bilateral. Planned cuts only. Baseline LSI early in block.", long_run: null }
-  - { name: "Build",      weeks: "3-4", dates: "May 24 - Jun 6",  target: "Higher-amplitude plyos. 45° -> 90° cuts. Introduce reactive. Begin squash drill exposure Saturdays.", long_run: null }
-  - { name: "Sport",      weeks: "5-6", dates: "Jun 7 - Jun 20",  target: "Full reactive agility under fatigue. Sport-specific squash expanding. Return-to-play assessment Jun 20.", long_run: null }
+  - { name: "Foundation", weeks: "1-2", dates: "May 9 - May 23",  target: "Lower-amplitude plyos, bilateral. Planned cuts only. Baseline LSI early in block." }
+  - { name: "Build",      weeks: "3-4", dates: "May 24 - Jun 6",  target: "Higher-amplitude plyos. 45° -> 90° cuts. Introduce reactive. Begin squash drill exposure Saturdays." }
+  - { name: "Sport",      weeks: "5-6", dates: "Jun 7 - Jun 20",  target: "Full reactive agility under fatigue. Sport-specific squash expanding. Return-to-play assessment Jun 20." }
 
 league:
   league_start_target:   2026-06-01

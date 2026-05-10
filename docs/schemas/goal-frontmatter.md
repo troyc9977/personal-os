@@ -6,16 +6,35 @@ A goal file has YAML frontmatter (between `---` lines) followed by a markdown
 body of narrative. The frontmatter is what Compass reads to materialize tasks
 and surface progress. The body is for the human reader.
 
-## Required fields
+This schema is the **strict spec** — names, shapes, and presence rules below
+are canonical. Variant naming (`status` for `done`, `date` for `target`, etc.)
+is not permitted. New type-specific fields require a schema update before
+authoring; do not invent fields ad-hoc on a goal file. Drift is what the
+2026-05-10 audit caught (see `docs/reviews/2026-05-10-goal-schema-audit.md`)
+and what ADR-0012 closed.
+
+---
+
+## Required universal fields
+
+Every goal file has all of these in its frontmatter, regardless of `type`.
 
 ```yaml
-id:           string    # kebab-case, must match filename (without .md)
-title:        string    # human-readable
-type:         enum      # see "Type values" below
-status:       enum      # active | paused | done | abandoned
-target_date:  date|null # ISO 8601, e.g. 2026-10-18; null for open-ended
-priority:     int       # 1-9, see ADR-0002 priority order
+id:           string        # kebab-case, must match filename (without .md)
+title:        string        # human-readable
+type:         enum          # see "Type values" below
+status:       enum          # active | paused | done | abandoned
+priority:     int           # 1-9, see ADR-0002 priority order
+created_at:   date          # ISO 8601 — when this file was authored
+target_date:  date|null     # ISO 8601, e.g. 2026-10-18; null for open-ended
+references:   list[string]  # see "references" below
+sessions_log: list          # see "sessions_log" below; always present, even as []
+milestones:   list          # see "milestones" below
 ```
+
+Note on `slug`: `slug` is derived from filename (basename minus `.md`) and is
+**not stored as a frontmatter field**. The architect and Compass both compute
+it from the file path; do not add a `slug:` key to a goal file.
 
 `status: active` means *currently being worked*. Three active goals with weekly
 sessions each is healthy; twenty active goals means the discipline has slipped.
@@ -38,76 +57,138 @@ The librarian flags long-running active goals with no recent updates.
 
 `type` drives which optional blocks are appropriate (see "Type-specific blocks").
 
-## Common optional fields
+### `references`
 
 ```yaml
-parent:       string|null     # parent goal id, for trees. Default null.
-references:   list[string]    # related ADRs (e.g. "docs/decisions/0007-...md"), project files
+references:   list[string]
 ```
 
-## Decomposition
+Any substrate paths this goal relates to — ADRs, project files, sibling
+long-term goal files, annual or quarterly goal docs, identity/people/routines
+references. The list is informational; Compass does not currently navigate it.
+
+### `milestones`
+
+Canonical inline-object shape. No aliases.
 
 ```yaml
-milestones:                   # checklist items inside this file
-  - title:       string
-    target:      date|null    # optional milestone deadline
-    done:        bool         # default false
-
-subgoals:                     # ids of child goal files
-  - subgoal-slug
+milestones:
+  - { title: string, target: date|null, done: bool }
 ```
 
-Most goals only need milestones. Promote to a subgoal file only when something
-earns its own narrative (e.g. the decline-of-West essay as a subgoal of the
-Substack launch).
+- `target` is the milestone's deadline. Spelled `target` (not `date`).
+- `done` is the boolean completion flag. Spelled `done` (not `status`).
+- Default `done: false` when authoring.
 
-## Scheduling
+The Compass worker historically aliased `target`/`date` and `done`/`status`.
+Per ADR-0012, the canonical names are `target` and `done`; the worker can drop
+the aliases on its next deploy.
+
+### `sessions_log`
+
+Appended by Compass when scheduled tasks tick. Always present in the
+frontmatter, even as `[]`, so write-paths don't have to materialize the key.
 
 ```yaml
-schedule:                     # day-of-week recurring sessions
-  - day:    string            # mon | tue | wed | thu | fri | sat | sun | every
-    title:  string            # task title; will be prefixed with [<goal-slug>] when materialized
+sessions_log:
+  - date:   date
+    title:  string
+    done:   bool
+    note:   string|null
 ```
+
+Don't author entries by hand; Compass writes them. For `behavioral` goals
+that also use `daily_tracking`, the per-day count log lives in
+`daily_tracking.log` (a separate, parallel append target). `sessions_log`
+remains present as `[]` even when not actively used.
+
+---
+
+## Optional universal fields
+
+Available to any goal type. Include them when meaningful; omit when not.
+
+### `review_date`
+
+```yaml
+review_date:  date|null     # next planned re-evaluation; null if none scheduled
+```
+
+Optional. Include when a re-evaluation date is meaningfully scheduled (e.g.
+post-taper, post-race, mid-sprint). Omit when not. Worked examples below show
+`review_date` on most files for context — that's illustrative, not required.
+
+### `tags`
+
+```yaml
+tags:         list[string]  # free-form labels; empty list [] if none
+```
+
+Optional. Include when meaningful labels exist; omit when not. Worked examples
+below show `tags` for context — that's illustrative, not required.
+
+### `schedule`
+
+Day-of-week recurring sessions. Optional — many goals don't have a fixed
+weekly cadence (e.g. `stop-smoking-2026.md` omits `schedule`).
+
+```yaml
+schedule:
+  - { day: enum, title: string }
+```
+
+`day` is one of `mon | tue | wed | thu | fri | sat | sun | every`.
 
 `start_day` (the Compass endpoint that creates today's daily entry) reads
-active goals and materializes scheduled tasks for today's day-of-week. So
-a marathon goal with `{ day: sun, title: "Long run" }` adds a `[marathon]
-Long run` task to Sunday's daily list automatically.
+active goals and materializes scheduled tasks for today's day-of-week. So a
+marathon goal with `{ day: sun, title: "Long run" }` adds a `[marathon] Long
+run` task to Sunday's daily list automatically.
 
 Date-based scheduling rules (e.g. "every 1st Sunday of the month") are not
 supported in v1. Day-of-week only.
 
-## Tracking
+### `phases`
 
-```yaml
-sessions_log:                 # appended by Compass when scheduled tasks tick
-  - date:   date
-    title:  string
-    done:   bool
-    note:   string|null       # optional inline note from the daily entry
-```
-
-This is where the goal file accumulates a real record of what got done against
-it. Don't author entries by hand; Compass writes them.
-
-## Type-specific blocks
-
-### `physical` and `behavioral`: phases
-
-Marathon training and similar ramped efforts. Phase entries describe the
-intent of each phase; the weekly pool gets the specific numbers during
-Sunday setup.
+Type-agnostic. Applicable to any goal with a temporal arc — physical ramps,
+behavioral tapers, creative sprints, multi-stage acquisitions. Do not
+restrict to physical/behavioral.
 
 ```yaml
 phases:
-  - name:    string           # e.g. "Base build"
-    weeks:   string           # e.g. "1-6"
-    dates:   string           # e.g. "May 5 - Jun 14"
-    target:  string           # e.g. "4 easy runs/week, 15 → 25 km/week"
-    long_run: string|null     # phase-specific long run target
+  - { name: string, weeks: string, dates: string|null, target: string|null, long_run?: string|null }
 ```
 
-### `physical`: stretch goal with explicit decision rule
+- `name` — short label (e.g. "Base build", "Outline", "Foundation").
+- `weeks` — string. Ranges (`"1-6"`), single weeks (`"3"`), or qualified
+  values (`"final day"`, `"3 — May 21 only"`) are all valid. The string form
+  preserves intent without forcing a numeric range.
+- `dates` — human-readable date range (e.g. `"May 5 - Jun 14"`). Nullable.
+- `target` — the intent of the phase in plain prose. Nullable.
+- `long_run` — **omittable entirely.** Include only on running-focused
+  `physical` goals where the phase has a meaningful weekly long-run target.
+  Non-running goals (ACL return-to-sport, screenplay, smoking taper) drop the
+  key — do not pad with `long_run: null`.
+
+### `parent` and `subgoals` — reserved for tree model, not yet in use
+
+```yaml
+parent:    string|null     # parent goal id
+subgoals:  list[string]    # ids of child goal files
+```
+
+Reserved for a future tree model where one long-arc goal decomposes into
+sibling goal files. No live file uses these as of 2026-05-10. Authors should
+omit both keys; Compass does not consume them yet. The librarian will flag
+their first use as a schema-evolution event.
+
+---
+
+## Type-specific blocks
+
+These blocks attach to specific `type` values. The architect updates this
+schema before introducing a new field on a goal file.
+
+### `physical` and `behavioral`: stretch goal with explicit decision rule
 
 For "do X, with stretch to Y if conditions met":
 
@@ -129,9 +210,7 @@ method:  string               # e.g. "cold turkey, NRT allowed for hard cravings
 taper:
   start_date:  date
   weeks:
-    - week:           int
-      dates:          string  # e.g. "May 5-11"
-      target_per_day: int
+    - { week: int, dates: string, target_per_day: int }
 
 maintenance:
   starts:  date               # day after taper ends
@@ -141,9 +220,8 @@ slip_protocol: |
   Multi-line description of what triggers a step-back, what the step-back is,
   and what triggers a method revisit.
 
-triggers:                     # optional, observed patterns
-  - description:  string
-    note:         string|null
+triggers:
+  - { description: string, note: string|null }
 ```
 
 ### `behavioral`: tap-counter daily tracking
@@ -154,9 +232,24 @@ For goals where Compass has a tap-increment widget (currently smoking).
 daily_tracking:
   metric:  string             # e.g. "cigarettes"
   unit:    string             # e.g. "count"
-  input:   string             # currently only "tap_increment"
+  input:   string             # v1: only "tap_increment" is supported
   log:     []                 # appended daily by Compass: { date, count, target, times: [HH:MM, ...] }
 ```
+
+`input: tap_increment` is the only supported value in v1. The Compass worker
+currently absorbs minor shape variation in `daily_tracking` via a multi-shape
+resolver in `getCurrentCap()`; declaring this canonical shape lets that
+resolver simplify on the worker's next deploy.
+
+When `daily_tracking` is present, the per-day count log accumulates in
+`daily_tracking.log`, not in `sessions_log`. `sessions_log: []` stays present
+on the file as a universal field.
+
+### `creative`: phases as the decomposition
+
+`creative` goals with a temporal arc use the universal `phases[]` block.
+`long_run` is omitted entirely (creative work has no running component). See
+`screenplay-may-21.md` for the live shape.
 
 ### `purchase`: target amount
 
@@ -167,10 +260,13 @@ target_amount:    int
 current_amount:   int         # update manually or via Compass v3+
 ```
 
+No live `purchase` goal file exists yet (the `buy-suit` example below is
+schematic).
+
 ### `trip`: typically just milestones
 
-Trip goals usually only need `milestones` for "book flights," "book accommodation,"
-"plan itinerary," "depart," "return." No extra blocks needed.
+Trip goals usually only need `milestones` for "book flights," "book
+accommodation," "plan itinerary," "depart," "return." No extra blocks needed.
 
 ### `acquisition`: decision triggers and constraints
 
@@ -184,9 +280,41 @@ constraints:                  # operational guardrails
   - string
 ```
 
+No live `acquisition` goal file exists yet (CNC shop and heritage
+restoration files are referenced by ADR-0007 but unauthored).
+
+---
+
+## Optional top-level blocks
+
+Available to any goal type. Include when the situation calls for them.
+
+### `league`
+
+For goals tied to a league or team-sport season — readiness gating, league
+start window, weekly commitments. First introduced on
+`acl-return-to-sport.md` (return-to-sport context); structurally available
+to any goal that joins a league.
+
+```yaml
+league:
+  league_start_target:    date|null         # when league play is intended to start
+  league_start_earliest:  date|null         # earliest acceptable start, if conditional
+  readiness_gate:         string|null       # optional: required pre-conditions
+  weekly_commitments:     list[string]      # league nights / matches
+```
+
+`readiness_gate` is **optional**. Required only when the earliest start is
+conditional on a clinical or readiness check — e.g. post-injury return.
+Future league goals (joining a new league without an injury context) omit
+`readiness_gate`.
+
+---
+
 ## Body conventions
 
-After the closing `---`, the body is markdown narrative. Recommended structure:
+After the closing `---`, the body is markdown narrative. Recommended
+structure:
 
 ```markdown
 # <Title repeated as H1>
@@ -212,20 +340,30 @@ Things not yet decided. Surfaces ambiguity rather than hiding it.
 The body is for the human (or future-Troy reading in 6 months). The
 frontmatter is for Compass.
 
-## Examples
+---
 
-### Physical (marathon)
+## Worked examples
+
+### Physical (marathon — running with `long_run`)
 
 ```yaml
 ---
 id: toronto-half-2026
+slug: toronto-half-2026
 title: Toronto Waterfront Half Marathon (with full-marathon stretch)
 type: physical
-target_date: 2026-10-18
 status: active
 priority: 4
+created_at: 2026-05-05
+target_date: 2026-10-18
+review_date: 2026-08-16
+tags: [running, marathon, health]
 references:
-  - docs/decisions/0010-add-gym-to-habits.md
+  - docs/decisions/0002-priority-ordering.md
+  - docs/decisions/0011-acl-block-priority-over-marathon-phase-1.md
+  - docs/goals/2026.md
+  - docs/goals/2026-Q2.md
+  - docs/goals/long-term/acl-return-to-sport.md
   - docs/projects/habits.md
 
 stretch:
@@ -233,44 +371,50 @@ stretch:
   decision_date: 2026-08-16
   decision_rule: |
     Upgrade to full at registration if ALL of:
-    - August half time ≤ 1:55
+    - August half time <= 1:55
     - Knee asymptomatic through phase 2 and phase 3
-    - ≤1 missed training week across base + aerobic blocks
+    - <=1 missed training week across base + aerobic blocks
 
 milestones:
   - { title: "Register for Toronto Waterfront Half", target: 2026-05-10, done: false }
   - { title: "Base build complete (25 km/wk, long run 10 km)", target: 2026-06-14, done: false }
   - { title: "Aerobic block complete (35 km/wk, long run 16 km)", target: 2026-07-26, done: false }
-  - { title: "August half (decision point)", target: 2026-08-16, done: false }
+  - { title: "August half (decision point on full upgrade)", target: 2026-08-16, done: false }
   - { title: "Long run peaks (22 km half / 32 km full)", target: 2026-09-06, done: false }
-  - { title: "Finish race day", target: 2026-10-18, done: false }
+  - { title: "Race day", target: 2026-10-18, done: false }
 
 phases:
-  - { name: "Base build", weeks: "1-6", dates: "May 5 - Jun 14", target: "4 easy runs/week, 15 → 25 km/wk", long_run: "to ~10 km" }
-  - { name: "Aerobic dev", weeks: "7-12", dates: "Jun 15 - Jul 26", target: "4-5 runs/week, 1 tempo, peak 30-35 km/wk", long_run: "to ~16 km" }
-  - { name: "Half-specific", weeks: "13-18", dates: "Jul 27 - Sep 6", target: "4-5 runs/week, race-pace work, peak 35-40 km/wk", long_run: "peaks ~22 km" }
-  - { name: "Sharpen / decide", weeks: "19-21", dates: "Sep 7 - Sep 27", target: "mild taper if half; long-run focus if upgrading", long_run: "peak ~32 km if full" }
-  - { name: "Race window", weeks: "22-24", dates: "Sep 28 - Oct 18", target: "final taper", long_run: null }
+  - { name: "Base build",       weeks: "1-6",   dates: "May 5 - Jun 20",  target: "Paused to 2 runs/week (Wed easy + Sun long) per ADR-0011.", long_run: "to ~10 km, 2x/week schedule" }
+  - { name: "Aerobic dev",      weeks: "7-13",  dates: "Jun 21 - Aug 8",  target: "Re-entry from ~14 km/wk base. 4-5 runs/week, 1 tempo, peak 30-35 km/wk.", long_run: "to ~16 km" }
+  - { name: "Half-specific",    weeks: "14-19", dates: "Aug 9 - Sep 20",  target: "4-5 runs/week, race-pace work, peak 35-40 km/wk", long_run: "peaks ~22 km" }
+  - { name: "Sharpen / decide", weeks: "20",    dates: "Sep 21 - Sep 27", target: "Compressed to 1 week. Mild taper if half; long-run focus if upgrading.", long_run: "peak ~32 km if full" }
+  - { name: "Race window",      weeks: "21-24", dates: "Sep 28 - Oct 18", target: "final taper", long_run: null }
 
 schedule:
-  - { day: tue, title: "Easy run" }
-  - { day: thu, title: "Tempo run (from phase 2)" }
+  - { day: wed, title: "Easy run" }
   - { day: sun, title: "Long run" }
 
 sessions_log: []
 ---
 ```
 
-### Behavioral (smoking taper)
+### Behavioral (smoking taper — `daily_tracking` plus universal `sessions_log: []`)
 
 ```yaml
 ---
 id: stop-smoking-2026
+slug: stop-smoking-2026
 title: Stop smoking — six-week taper, then maintenance
 type: behavioral
-target_date: 2026-06-15
 status: active
 priority: 4
+created_at: 2026-05-05
+target_date: 2026-06-15
+review_date: 2026-06-15
+tags: [health, habit-change]
+references:
+  - docs/decisions/0002-priority-ordering.md
+  - docs/projects/habits.md
 
 method: "Cold turkey within taper; NRT allowed for hard post-work cravings"
 
@@ -289,8 +433,12 @@ maintenance:
   target: "1 per week max, indefinitely"
 
 slip_protocol: |
-  Three consecutive over-plan days → drop to previous week's target for 7 days,
-  then re-attempt the next step. Two failed step-backs in same week → method revisit.
+  Three consecutive over-plan days -> drop to previous week's target for 7 days,
+  then re-attempt the next step.
+
+triggers:
+  - { description: "Post-work decompression on DCC office days", note: "highest-frequency window historically" }
+  - { description: "Drinks with friends on weekends", note: "social, situational" }
 
 daily_tracking:
   metric: cigarettes
@@ -299,59 +447,112 @@ daily_tracking:
   log: []
 
 milestones:
-  - { title: "30 days at maintenance", target: 2026-07-16, done: false }
-  - { title: "90 days at maintenance", target: 2026-09-15, done: false }
-  - { title: "365 days at maintenance", target: 2027-06-15, done: false }
----
-```
-
-### Career (Substack)
-
-```yaml
----
-id: substack-2026
-title: First external publication, Substack opens around it
-type: creative
-target_date: 2026-11-30
-status: active
-priority: 6
-references:
-  - docs/decisions/0009-substack-launch-timeline-revision.md
-  - docs/projects/substack.md
-
-milestones:
-  - { title: "X following → 400", target: 2026-09-15, done: false }
-  - { title: "Decline-of-West section 1 drafted", target: 2026-06-30, done: false }
-  - { title: "First publishable piece complete", target: 2026-10-15, done: false }
-  - { title: "First piece published in external venue", target: 2026-11-30, done: false }
-  - { title: "Substack launch around the publication", target: 2026-11-30, done: false }
-
-schedule:
-  - { day: sat, title: "Writing block" }
+  - { title: "Taper complete (1/day floor held for week 6)", target: 2026-06-15, done: false }
+  - { title: "30 days at maintenance",                       target: 2026-07-16, done: false }
 
 sessions_log: []
 ---
 ```
 
-### Purchase (suit)
+### Creative (screenplay sprint — `phases[]` without `long_run`)
+
+```yaml
+---
+id: screenplay-may-21
+slug: screenplay-may-21
+title: Short film script — outline to polish in 13 days
+type: creative
+status: active
+priority: 6
+created_at: 2026-05-09
+target_date: 2026-05-21
+review_date: 2026-05-21
+tags: [creative, sprint]
+references:
+  - docs/decisions/0002-priority-ordering.md
+  - docs/identity.md
+
+milestones:
+  - { title: "Beat sheet done",              target: 2026-05-10, done: false }
+  - { title: "First draft to FADE OUT",      target: 2026-05-17, done: false }
+  - { title: "Polish complete — script done", target: 2026-05-21, done: false }
+
+phases:
+  - { name: "Outline", weeks: "1",                dates: "May 9 - May 10",  target: "Beat sheet — full sequence of beats, no prose yet" }
+  - { name: "Draft",   weeks: "2",                dates: "May 11 - May 17", target: "First draft to FADE OUT. Get there ugly if needed." }
+  - { name: "Revise",  weeks: "3",                dates: "May 18 - May 20", target: "Structural and dialogue passes." }
+  - { name: "Polish",  weeks: "3 — May 21 only",  dates: "May 21",          target: "Final read; format clean; done." }
+
+schedule:
+  - { day: mon, title: "Screenplay session (~1.5 hr, evening)" }
+  - { day: sat, title: "Screenplay heavy creative block (morning)" }
+  - { day: sun, title: "Screenplay heavy creative block (morning)" }
+
+sessions_log: []
+---
+```
+
+### Purchase (schematic — no live file yet)
 
 ```yaml
 ---
 id: buy-suit
+slug: buy-suit
 title: Saville-Row-grade suit
 type: purchase
 status: active
 priority: 8
+created_at: 2026-05-10
 target_date: null
+review_date: null
+tags: [purchase]
+references: []
+
 target_amount: 4000
 current_amount: 0
 
 milestones:
-  - { title: "Save first $1000", done: false }
-  - { title: "Choose tailor", done: false }
-  - { title: "Place order", done: false }
+  - { title: "Save first $1000", target: null, done: false }
+  - { title: "Choose tailor",    target: null, done: false }
+  - { title: "Place order",      target: null, done: false }
+
+sessions_log: []
 ---
 ```
+
+### Acquisition (schematic — no live file yet)
+
+```yaml
+---
+id: cnc-shop-acquisition
+slug: cnc-shop-acquisition
+title: CNC shop acquisition (long-horizon thesis)
+type: acquisition
+status: paused
+priority: 9
+created_at: 2026-05-10
+target_date: null
+review_date: 2027-01-01
+tags: [acquisition, long-arc]
+references:
+  - docs/decisions/0007-heritage-and-cnc-time-horizons.md
+
+decision_triggers:
+  - "WardForge stable revenue covers personal floor"
+  - "Capital ready and a real shop comes on market"
+
+constraints:
+  - "Cannot start while WardForge phase 2 is unfinished"
+  - "Geography limited to commutable from Toronto"
+
+milestones:
+  - { title: "Thesis revisit at WardForge phase 2 close", target: null, done: false }
+
+sessions_log: []
+---
+```
+
+---
 
 ## Schema evolution
 
@@ -364,4 +565,5 @@ This schema will grow. When a new goal needs a field that's not here:
    required before the change lands.
 
 The librarian validates existing goal files against this schema and flags
-drift.
+drift. ADR-0012 (canonical goal frontmatter schema) is the governing
+decision; subsequent additions amend or supersede it as needed.

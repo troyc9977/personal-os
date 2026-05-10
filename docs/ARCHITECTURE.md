@@ -109,7 +109,7 @@ The architect authors against the schema; the scribe updates existing files.
 
 One markdown file per decision, numbered sequentially (`0001-personal-os-exists.md`
 onward). Captures *why* a choice was made, not just *what* the choice was.
-Currently 0001–0011. Next available: 0012. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
+Currently 0001–0012. Next available: 0013. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
 
 The architect drafts ADRs. The librarian maintains the index after merges.
 
