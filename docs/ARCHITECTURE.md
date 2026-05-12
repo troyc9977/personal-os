@@ -110,7 +110,7 @@ The architect authors against the schema; the scribe updates existing files.
 
 One markdown file per decision, numbered sequentially (`0001-personal-os-exists.md`
 onward). Captures *why* a choice was made, not just *what* the choice was.
-Currently 0001–0013. Next available: 0014. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
+Currently 0001–0014. Next available: 0015. Index: `docs/decisions/README.md`. Template: `docs/decisions/template.md`.
 
 The architect drafts ADRs. The librarian maintains the index after merges.
 
@@ -118,7 +118,7 @@ The architect drafts ADRs. The librarian maintains the index after merges.
 
 One markdown file per active life-project: `28th-floor.md`,
 `contemplative-practice.md`, `dcc.md`, `family-friends.md`, `filmmaking.md`,
-`habits.md`, `heritage-restoration.md`, `substack.md`, `wardforge.md`. Each
+`habits.md`, `heritage-restoration.md`, `ridingpulse.md`, `substack.md`. Each
 file is the source-of-truth for that project.
 
 Project files follow a shape: status, what-it-is, where-in-long-arc,
@@ -184,7 +184,7 @@ over the three files it manages.
 
 - Real secrets or credentials — never in this repo. Compass keeps OAuth client secrets and the GitHub token in Cloudflare Worker secrets.
 - DCC work artifacts — separate concern, separate workflow.
-- WardForge code — separate repo. (Personal-context project tracking files DO live here, in `docs/projects/wardforge.md`.)
+- RidingPulse code — separate repo. (Personal-context project tracking files DO live here, in `docs/projects/ridingpulse.md`.)
 - Drafts of public Substack posts after they're published — published pieces live on Substack itself.
 
 ## Open architectural questions

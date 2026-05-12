@@ -21,8 +21,9 @@ Format: `NNNN-short-name.md` (e.g. `0001-personal-os-exists.md`).
 | 0011 | `0011-acl-block-priority-over-marathon-phase-1.md` | Accepted | 2026-05-09 |
 | 0012 | `0012-canonical-goal-frontmatter-schema.md` | Accepted | 2026-05-10 |
 | 0013 | `0013-reading-tracker-architecture.md` | Accepted | 2026-05-10 |
+| 0014 | `0014-ridingpulse-pivot.md` | Accepted | 2026-05-12 |
 
-Next available: **0014**.
+Next available: **0015**.
 
 ## Pattern
 

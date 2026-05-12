@@ -9,7 +9,7 @@ Eventually a brain will sit on top of this repo and answer queries against it. F
 **Goes here:** values, long-arc commitments, current projects, decisions, weekly states, reading notes, important relationships, inbox capture.
 
 **Does not go here:**
-- WardForge operational substrate — that lives in the WardForge repo. A summary file lives at `docs/projects/wardforge.md` for personal context only.
+- RidingPulse operational substrate — that lives in the company repo. A summary file lives at `docs/projects/ridingpulse.md` for personal context only.
 - DCC work — kept walled off entirely, for COI reasons.
 - Anything sensitive about other people that they wouldn't want recorded.
 - Credentials, financial details, anything that should be in 1Password.

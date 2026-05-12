@@ -28,8 +28,8 @@ Top level:
 - `calendar/YYYY-MM.md` — events/appointments. *Planned (Compass v2). Not yet present.*
 - `goals/YYYY.md`, `goals/YYYY-Qn.md` — annual and quarterly markdown goal docs.
 - `goals/long-term/<slug>.md` — YAML-frontmatter goal files with milestones, schedules, sessions_log. Schema in `docs/schemas/goal-frontmatter.md`. *Some files referenced by ADRs but not yet authored — flagged in librarian audits.*
-- `decisions/NNNN-*.md` — Architecture Decision Records, numbered 0001+. Index in `decisions/README.md`. Template in `decisions/template.md`. Currently 0001–0013. Next available: 0014.
-- `projects/*.md` — one file per active life-project (`28th-floor.md`, `dcc.md`, `substack.md`, `wardforge.md`, etc.).
+- `decisions/NNNN-*.md` — Architecture Decision Records, numbered 0001+. Index in `decisions/README.md`. Template in `decisions/template.md`. Currently 0001–0014. Next available: 0015.
+- `projects/*.md` — one file per active life-project (`28th-floor.md`, `dcc.md`, `ridingpulse.md`, `substack.md`, etc.).
 - `notes/YYYY-MM-DD-name.md` — freeform dated thinking, promoted from inbox when ideas mature.
 - `schemas/*.md` — schemas for structured files (currently `goal-frontmatter.md`).
 - `tasks/` — task specs written by the architect for the scribe. Created as needed.
@@ -54,7 +54,7 @@ into Substack drafts. No mentioning the filenames in any non-PRIVATE file.
 
 A `PreToolUse` hook (`.claude/hooks/leak-check.js`) enforces this:
 - Direct Write/Edit on the PRIVATE files is **blocked**. Troy edits these manually.
-- Write/Edit on any other file is **scanned for leak signatures**. Public-leaning files (`docs/projects/wardforge.md`, Substack drafts under `docs/notes/`, `docs/goals/long-term/substack-*.md`, README, CLAUDE.md, ARCHITECTURE.md) get a strict warning. Internal files get a soft warning.
+- Write/Edit on any other file is **scanned for leak signatures**. Public-leaning files (`docs/projects/ridingpulse.md`, Substack drafts under `docs/notes/`, `docs/goals/long-term/substack-*.md`, README, CLAUDE.md, ARCHITECTURE.md) get a strict warning. Internal files get a soft warning.
 
 If the hook fires, surface the warning to Troy and confirm before proceeding.
 Don't try to bypass it.
@@ -90,7 +90,7 @@ This repo runs three sub-agents, scoped to high-leverage workflows:
 
 - **architect** — Decomposes fuzzy thinking into structured artifacts. Drafts ADRs from "I just decided X." Authors goal-file YAML frontmatter + narrative against the schema in `docs/schemas/goal-frontmatter.md`. Identifies the right container for any input (ADR vs goal vs project update vs inbox vs note). Reads `identity.md`, ADR-0002, the PRIVATE files for context. Writes only structured artifacts.
 - **scribe** — Writes content in house voice against architect specs. Updates project files. Drafts weekly review composition by reading `daily/`, `weekly/`, `reading-log/`. Promotes mature inbox bullets to `notes/`. Doesn't make architectural decisions.
-- **librarian** — Read-mostly. Cross-reference integrity (ADR-0007 references `goals/long-term/cnc-shop-acquisition.md` which was moved to `docs/notes/2026-05-09-cnc-shop-acquisition.md` — flagged drift; ADR-0009 references `goals/long-term/substack-2026.md` which is now authored; `stop-smoking-2026.md` is now authored but has no dedicated ADR yet). Monthly decision audit ("which ADRs from past 30 days are still holding?"). Quarterly project audit. Updates `README.md`, `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/decisions/README.md` after merges. Validates Compass parser-format compliance when daily/weekly/inbox are hand-edited.
+- **librarian** — Read-mostly. Cross-reference integrity (ADR-0007 references `goals/long-term/cnc-shop-acquisition.md` which was moved to `docs/notes/2026-05-09-cnc-shop-acquisition.md` — flagged drift; `stop-smoking-2026.md` is now authored but has no dedicated ADR yet; ADR-0009 is partially superseded by ADR-0014 on timing — status annotation pending Troy's decision). Monthly decision audit ("which ADRs from past 30 days are still holding?"). Quarterly project audit. Updates `README.md`, `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/decisions/README.md` after merges. Validates Compass parser-format compliance when daily/weekly/inbox are hand-edited.
 
 **Default sequence for non-trivial work:**
 `architect → scribe → (Troy reviews) → librarian audits cross-references`
