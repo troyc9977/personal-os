@@ -2,13 +2,15 @@
 
 **Status**: active. One core workflow shipped and in regular use. Eval harness next.
 
-This file is *deliberately thin and abstracted* — same discipline as `docs/projects/dcc.md` and `docs/projects/dcc-qa-tool.md`. Detailed implementation tracking — workflows, data types, integration architecture, vendor specifics, accuracy numbers — lives outside personal-OS intentionally. What belongs here is the personal-context view: time investment, decision-level state, and the question of whether to surface the work professionally.
+This file is *deliberately thin and abstracted* — same discipline as `docs/projects/dcc.md`. Detailed implementation tracking — workflows, data types, integration architecture, vendor specifics, accuracy numbers — lives outside personal-OS intentionally. What belongs here is the personal-context view: time investment, decision-level state, and the question of whether to surface the work professionally.
+
+A prior file (`dcc-qa-tool.md`) tracked a specific tool with specific scope and was folded into this umbrella on 2026-05-12 — the implementation specifics it carried (capture mechanics, export formats, vision-model integration, deferred features) belonged outside personal-OS, and the abstract "first shipped workflow, in daily use" status is already captured here.
 
 Last updated: 2026-05-12
 
 ## What it is
 
-AI tooling for accelerating routine DCC workflows. A meta-level personal-productivity initiative sitting adjacent to day-job work — separate from `dcc-qa-tool.md`, which is a specific tool with a specific scope. This file is the umbrella for the broader question: how much of the routine work of the role can be moved to AI assistance, and what does that change about how the role is performed.
+AI tooling for accelerating routine DCC workflows. A meta-level personal-productivity initiative sitting adjacent to day-job work. The umbrella for the broader question: how much of the routine work of the role can be moved to AI assistance, and what does that change about how the role is performed.
 
 ## Where it sits in my long-arc
 
@@ -33,7 +35,7 @@ The scale-up is bounded. If the eval harness doesn't land or the accuracy is not
 
 ## Conflict of interest hygiene
 
-Same rules as `docs/projects/dcc.md` and `docs/projects/dcc-qa-tool.md`. Explicitly:
+Same rules as `docs/projects/dcc.md`. Explicitly:
 
 - Runs on personal hardware. No DCC laptop, no DCC accounts.
 - No DCC protected information ingested into anything that leaves controlled boundaries.
@@ -72,5 +74,4 @@ No fixed dates — sequenced, not calendared. The eval harness is the gate befor
 ## Related
 
 - `docs/projects/dcc.md` — the day-job container
-- `docs/projects/dcc-qa-tool.md` — sibling project, a specific tool with specific scope
 - `docs/decisions/0002-priority-ordering.md` — DCC at #7; this initiative sits inside that bucket
