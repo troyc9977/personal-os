@@ -14,14 +14,14 @@ references:
 milestones:
   - { title: "Beat sheet complete",                                target: 2026-05-13, done: false }
   - { title: "Detailed sequence outline",                          target: 2026-05-17, done: false }
-  - { title: "Draft 50% (mid-checkpoint, before NYC trip)",        target: 2026-05-22, done: false }
+  - { title: "Draft 50% (mid-checkpoint)",                         target: 2026-05-22, done: false }
   - { title: "Draft complete",                                     target: 2026-05-27, done: false }
   - { title: "Revision complete",                                  target: 2026-05-30, done: false }
   - { title: "Final polish — screenplay done",                     target: 2026-05-31, done: false }
 
 phases:
   - { name: "Outline", weeks: "1",                dates: "May 12 - May 17", target: "Beat sheet (May 13), detailed sequence outline (May 17). No prose yet." }
-  - { name: "Draft",   weeks: "2",                dates: "May 18 - May 27", target: "First draft to FADE OUT. 50% mid-checkpoint May 22 before NYC trip; complete May 27. Get there ugly if needed." }
+  - { name: "Draft",   weeks: "2",                dates: "May 18 - May 27", target: "First draft to FADE OUT. 50% mid-checkpoint May 22; complete May 27. Get there ugly if needed." }
   - { name: "Revise",  weeks: "3",                dates: "May 28 - May 30", target: "Structural and dialogue passes. Cut, sharpen, condense." }
   - { name: "Polish",  weeks: "3 — May 31 only",  dates: "May 31",          target: "Final read; format clean; done." }
 
