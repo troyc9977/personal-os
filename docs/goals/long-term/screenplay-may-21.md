@@ -25,15 +25,6 @@ phases:
   - { name: "Revise",  weeks: "3",                dates: "Jun 4 - Jun 6",   target: "Structural and dialogue passes. Cut, sharpen, condense." }
   - { name: "Polish",  weeks: "3 — Jun 7 only",   dates: "Jun 7",           target: "Final read; format clean; done." }
 
-schedule:
-  - { day: mon, title: "Screenplay session (~1.5 hr, evening)" }
-  - { day: tue, title: "Screenplay session (~1.5 hr, evening)" }
-  - { day: wed, title: "Screenplay session (~1.5 hr, evening)" }
-  - { day: thu, title: "Screenplay session (~1.5 hr, evening)" }
-  - { day: fri, title: "Screenplay session (~1.5 hr, evening)" }
-  - { day: sat, title: "Screenplay heavy creative block (morning)" }
-  - { day: sun, title: "Screenplay heavy creative block (morning)" }
-
 sessions_log: []
 ---
 
@@ -107,6 +98,11 @@ is "right."
   for cross-reference stability — future-Troy: the "may-21" in the
   filename is historical, the body is the source of truth on the actual
   date.
+- **Schedule[] paused 2026-05-12 to 2026-05-17 to absorb the writing-volume
+  dip.** Block removed from frontmatter so Compass stops auto-pulling daily
+  sessions. Restore on 2026-05-18 (Mon): Mon-Fri evening sessions (~1.5 hr)
+  + Sat/Sun heavy creative morning blocks. Calendar event
+  `restore-screenplay-schedule-2026-05-18` flags the restore date.
 - The logline. Troy writes this before the May 19 outline phase begins.
 - Final page count target. Spec says 5-15 pages; the beat sheet on May 20
   is the natural moment to commit to a number.
