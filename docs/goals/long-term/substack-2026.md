@@ -12,7 +12,7 @@ references:
   - docs/goals/long-term/ridingpulse-v1.md
   - docs/decisions/0014-ridingpulse-pivot.md
 milestones:
-  - { title: "Piece 1 — specific lobbying case selected (research kickoff)", target: 2026-05-17, done: false }
+  - { title: "Piece 1 — specific lobbying case selected (research kickoff)", target: 2026-05-24, done: false }
   - { title: "Piece 1 — research notes + outline draft",                     target: 2026-05-24, done: false }
   - { title: "Piece 1 — half draft",                                         target: 2026-06-07, done: false }
   - { title: "Piece 1 — full draft",                                         target: 2026-06-14, done: false }
