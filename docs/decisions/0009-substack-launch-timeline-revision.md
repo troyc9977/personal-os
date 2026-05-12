@@ -17,7 +17,7 @@ After two months, the honest read of the substrate is different from what ADR-00
 - The decline-of-West piece is still circling.
 - The original framing — Substack as the home, with biweekly cadence — places a lot of weight on the substack-itself-as-vehicle. That doesn't match the actual ambition.
 
-The deeper goal is not "ship a Substack with a backlog." It's to publish a real piece in a serious external venue (Comment Magazine as the named first target per `projects/substack.md`) and use the Substack as the home around it.
+The deeper goal is not "ship a Substack with a backlog." It's to publish a real piece in a serious external venue (Comment Magazine as the named first target per `goals/long-term/substack-2026.md`) and use the Substack as the home around it.
 
 ## Decision
 
@@ -59,4 +59,3 @@ Revisited at:
 
 - `docs/decisions/0004-substack-launch-preconditions.md` (superseded portion)
 - `goals/long-term/substack-2026.md`
-- `projects/substack.md`

@@ -70,14 +70,63 @@ X following is now a deliberate audience-building motion paired with the
 publication, not a separate growth project — the same time produces two
 outputs.
 
+A piece is finished when it's true and well-said, not when it's long
+enough.
+
+## Positioning
+
+Building toward being Canada's foremost voice on infrastructure delivery
+and political modernization — the practitioner-intellectual lane that
+almost nobody currently occupies in Canada. Most infrastructure writing
+is academic, opaque, or partisan. The opportunity is direct, technically
+literate, civically serious writing for an educated general audience.
+
+*Comment Magazine* remains the first outside-publication target if and
+when external-venue submission becomes the right move. Held as a future
+option, not a current gate.
+
+## Themes
+
+The range of pieces this publication develops over time:
+
+- Lobbying networks and influence flows in Canadian politics — the
+  RidingPulse tool's natural home and the angle for piece 1.
+- How big things actually get built (and why so few of them in Canada now).
+- Productivity decline and capital misallocation in Canadian housing /
+  real estate.
+- The 52 GTA infrastructure authorities by domain and jurisdiction.
+- Political modernization without losing what's worth keeping.
+- The contemplative roots of serious public work.
+- The Decline-of-West essay as a longer arc threading through several
+  pieces (parked; see Approach above).
+
+## Reading anchor
+
+- Bent Flyvbjerg, *How Big Things Get Done* — the master text on
+  infrastructure delivery.
+- Infrastructure Ontario frameworks.
+- Auditor General reports (Ontario and federal).
+- Caro on Robert Moses (different era, same animal).
+- For the Decline-of-West thread when it reopens: Spengler, Burnham,
+  MacIntyre, contemporary Canadian / British / American conservative
+  thought.
+
+## What this is not
+
+- Daily political commentary.
+- Hot takes on the news cycle.
+- Anything that requires being chronically online.
+
 **Decline-of-West essay parked as future piece.** Not the right opener
 for this arc — the first piece needs to make what the RidingPulse tool
 does visible. Decline-of-West is a thematic essay without a tool-output
 hook, and shipping it first sells the wrong frame for the platform.
-Existing work (thesis + 5-section outline captured in May daily entries,
-plus the longer context in `docs/projects/substack.md`) is preserved.
-The essay is held in rotation and gets its turn once the tool-anchored
-opening pieces have established what the publication is.
+Existing work (thesis + 5-section outline captured in May daily entries)
+is preserved. The essay is held in rotation and gets its turn once the
+tool-anchored opening pieces have established what the publication is.
+Discipline when re-engaged: open a document, write the worst version of
+the first paragraph, and iterate from there. Starting badly is the
+practice; starting well is the eventual outcome.
 
 ## Watch-for signals
 
@@ -126,5 +175,4 @@ opening pieces have established what the publication is.
 - `docs/decisions/0002-priority-ordering.md` — priority order; writing now sits inside the RidingPulse priority-2 bucket via the coupling
 - `docs/projects/ridingpulse.md` — the platform whose first output piece 1 showcases
 - `docs/goals/long-term/ridingpulse-v1.md` — the paired build arc
-- `docs/projects/substack.md` — full project context, themes, reading anchor (Decline-of-West thesis lives there)
 - `docs/identity.md` — the long-arc commitment this serves

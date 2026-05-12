@@ -48,6 +48,6 @@ This ADR gets revisited at:
 
 ## Related
 
-- `docs/projects/substack.md` — the full project file
+- `docs/goals/long-term/substack-2026.md` — full goal file (the prior `docs/projects/substack.md` was folded in on 2026-05-12)
 - `docs/identity.md` — long-arc commitments including the Substack track
 - `docs/decisions/0002-priority-ordering.md` — writing's position in the priority order
