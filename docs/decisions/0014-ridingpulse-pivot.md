@@ -60,6 +60,11 @@ Rebrand WardForge as RidingPulse.
   biweekly cadence thereafter. Publication name TBD, defaults to Troy Campbell.
   ADR-0009's quality constraint — publish pieces worth reading, not filler —
   carries forward unchanged.
+- **First piece angle**: specific recent case tied to news; specific case
+  selected by 2026-05-17 per the `substack-2026` goal. The decision shape is
+  set here (a case, tied to news, surfaced through the tool) so future-Troy
+  doesn't relitigate "what was the first piece supposed to be" — only which
+  case.
 - **Decline-of-West essay parked as a future piece.** The existing outline
   (thesis + 5-section structure) is preserved in May daily entries. It is held
   in rotation, not the first piece. Re-engage when biweekly cadence is

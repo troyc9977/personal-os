@@ -16,7 +16,7 @@ Format: `NNNN-short-name.md` (e.g. `0001-personal-os-exists.md`).
 | 0006 | `0006-compass-dashboard.md` | Accepted | 2026-05-05 |
 | 0007 | `0007-heritage-and-cnc-time-horizons.md` | Accepted | 2026-05-05 |
 | 0008 | `0008-family-friends-events-layer.md` | Accepted | 2026-05-05 |
-| 0009 | `0009-substack-launch-timeline-revision.md` | Accepted | 2026-05-05 |
+| 0009 | `0009-substack-launch-timeline-revision.md` | Accepted (partially superseded by 0014) | 2026-05-05 |
 | 0010 | `0010-add-gym-to-habits.md` | Accepted | 2026-05-05 |
 | 0011 | `0011-acl-block-priority-over-marathon-phase-1.md` | Accepted | 2026-05-09 |
 | 0012 | `0012-canonical-goal-frontmatter-schema.md` | Accepted | 2026-05-10 |
