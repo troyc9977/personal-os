@@ -38,11 +38,9 @@ league:
 schedule:
   - { day: mon, title: "Lower strength + low-amplitude plyos (~75 min)" }
   - { day: tue, title: "Linear conditioning + change of direction (planned cuts)" }
-  - { day: wed, title: "Easy run 6-8km" }
   - { day: thu, title: "Lower strength (unilateral) + high-amplitude plyos" }
   - { day: fri, title: "Reactive agility + sport-specific squash" }
   - { day: sat, title: "Optional squash exposure — drills, light play" }
-  - { day: sun, title: "Long run (per marathon plan)" }
 
 sessions_log: []
 ---

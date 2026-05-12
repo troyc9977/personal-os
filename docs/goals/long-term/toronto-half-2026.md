@@ -39,7 +39,7 @@ phases:
   - { name: "Race window",      weeks: "21-24", dates: "Sep 28 - Oct 18", target: "final taper", long_run: null }
 
 schedule:
-  - { day: wed, title: "Easy run" }
+  - { day: wed, title: "Easy run 6-8km" }
   - { day: sun, title: "Long run" }
 
 sessions_log: []
