@@ -1,7 +1,7 @@
 ---
 id: ridingpulse-v1
 title: RidingPulse v1 — public-viewer tool launch
-type: career
+type: product
 status: active
 priority: 2
 created_at: 2026-05-12

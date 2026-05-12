@@ -48,9 +48,10 @@ The librarian flags long-running active goals with no recent updates.
 
 - `physical` — running, lifting, body work (e.g. marathon, ACL recovery)
 - `behavioral` — habit changes (e.g. smoking taper)
-- `career` — job, business, professional milestones (e.g. WardForge launch, DCC AI workflow)
+- `career` — job, business, professional milestones (e.g. DCC AI workflow)
 - `creative` — writing, filmmaking, public-facing intellectual work (e.g. Substack)
 - `intellectual` — reading commitments, study, learning
+- `product` — software or hardware product builds (e.g. RidingPulse v1)
 - `purchase` — savings goals (e.g. suit, MacBook)
 - `trip` — travel
 - `acquisition` — business or property acquisition (e.g. CNC shop, heritage restoration)
