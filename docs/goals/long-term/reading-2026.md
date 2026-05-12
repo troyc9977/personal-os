@@ -22,7 +22,6 @@ daily_tracking:
 
 currently_reading:
   - "Robert Caro — The Power Broker"
-  - "E. B. White — Here Is New York"
 
 to_read:
   - "Plutarch — Greek Lives"
@@ -34,6 +33,7 @@ finished:
   - "C. S. Lewis — Mere Christianity"
   - "Epictetus — Discourses (Penguin Classics)"
   - "James Fox — The World According to Color"
+  - "E. B. White — Here Is New York"
 
 milestones: []
 
