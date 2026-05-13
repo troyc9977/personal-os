@@ -22,6 +22,7 @@ daily_tracking:
 
 currently_reading:
   - "Robert Caro — The Power Broker"
+  - "George Grant — Lament for a Nation"
 
 to_read:
   - "Plutarch — Greek Lives"
